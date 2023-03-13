@@ -12,7 +12,7 @@ const RenderCards = ({ data, title }) => {
 }
 
 const Home = () => {
-  const BASE_URL = 'https://imagegen-ai-lgrf.onrender.com/';
+  const BASE_URL = 'https://imagegen-ai-lgrf.onrender.com';
 
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
