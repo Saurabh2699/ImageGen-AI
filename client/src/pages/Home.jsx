@@ -12,6 +12,8 @@ const RenderCards = ({ data, title }) => {
 }
 
 const Home = () => {
+  const BASE_URL = 'https://imagegen-ai-lgrf.onrender.com/';
+  
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
   const [searchText, setSearchText] = useState('');
@@ -34,7 +36,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3000/api/v1/post', {
+      const response = await fetch(BASE_URL, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

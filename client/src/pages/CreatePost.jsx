@@ -6,6 +6,8 @@ import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
 
 const CreatePost = () => {
+    const BASE_URL = 'https://imagegen-ai-lgrf.onrender.com/';
+
     const navigate = useNavigate();
     const [form, setForm] = useState({
         name: '',
@@ -21,7 +23,7 @@ const CreatePost = () => {
         if (form.prompt && form.photo) {
             setLoading(true);
             try {
-                const response = await fetch('http://localhost:3000/api/v1/post', {
+                const response = await fetch(BASE_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -56,7 +58,7 @@ const CreatePost = () => {
         if (form.prompt) {
             try {
                 setGeneratingImg(true);
-                const response = await fetch('http://localhost:3000/api/v1/dalle', {
+                const response = await fetch(BASE_URL, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
